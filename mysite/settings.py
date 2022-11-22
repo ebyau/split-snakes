@@ -144,8 +144,17 @@ STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME'),
-    'API_KEY': config('API_KEY'),
-    'API_SECRET': config('API_SECRET')
-}
+
+
+cloudinary.config (
+    cloud_name = config('CLOUD_NAME'),
+    api_key = config('API_KEY'),
+    api_secret = config('API_SECRET')
+)
+
+# cloudinary.config( 
+#   cloud_name = "sample", 
+#   api_key = "874837483274837", 
+#   api_secret = "a676b67565c6767a6767d6767f676fe1",
+#   secure = true
+# )
