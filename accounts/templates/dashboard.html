@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load cloudinary %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>WELCOME TO FAMILY CIRCLE AUDIO CENTER</h1>
+
+<p>
+
+    This is the audio dashboard, showing audios that have been uploaded to the database.
+</p>
+
+<button type="button" name="button"><a href="{% url 'upload'%}">UPLOAD</a></button>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Audio File</th>
+      <th>Uploaded at</th>
+      <th>Transcription File</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for i in audio %}
+      <tr>
+          <td>{{ i.name }}</td>
+          <td><a href="{{i.file.url}}">{{i.file.url}}</a></td>
+          <td>{{ i.date_created }}</td>
+        <td><a href="{{i.message.url}}">{{i.message.url}}</a></td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No data.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
