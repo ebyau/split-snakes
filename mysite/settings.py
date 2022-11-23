@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-# import cloudinary_storage
-# import cloudinary.uploader
-# import cloudinary.api
 from decouple import config, Csv
 
 import os
@@ -51,7 +48,7 @@ INSTALLED_APPS = [
     
     'accounts',
     'cloudinary',
-    #'cloudinary_storage',
+    
 ]
 
 MIDDLEWARE = [
